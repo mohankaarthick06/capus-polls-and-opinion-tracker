@@ -8,14 +8,22 @@ import java.time.LocalDateTime;
 public class Vote {
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
+
 private Long voteId;
+
 @ManyToOne
 @JoinColumn(name="user_id")
+
 private User user;
-@ManyToOne@JoinColumn(name="poll_id")
+
+@ManyToOne
+@JoinColumn(name="poll_id")
 private Poll poll;
+
 @ManyToOne
 @JoinColumn(name="option_id")
+
 private PollOption option;
+
 private LocalDateTime votedAt=LocalDateTime.now();
 }
